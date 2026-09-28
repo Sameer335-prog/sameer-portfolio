@@ -1,0 +1,2287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sameer Ahmad — Software Developer &amp; CS Student</title>
+<meta name="description" content="Portfolio of Sameer Ahmad — Computer Science student building mobile apps, AI-powered tools, compiler systems, and CRM software.">
+
+<!-- Modern Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* CSS RESET & MODERN TOKENS */
+:root {
+  --bg: #0b0f19;
+  --bg-subtle: #111827;
+  --panel: #162032;
+  --panel-hover: #1c2940;
+  --panel-border: rgba(255, 255, 255, 0.08);
+  --panel-border-focus: rgba(99, 102, 241, 0.4);
+  --ink: #f3f4f6;
+  --ink-heading: #ffffff;
+  --muted: #94a3b8;
+  --line: rgba(255, 255, 255, 0.1);
+  --accent: #3b82f6;
+  --accent-gradient: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+  --accent-glow: rgba(59, 130, 246, 0.25);
+  --accent-ink: #ffffff;
+  --tag-bg: rgba(59, 130, 246, 0.12);
+  --tag-ink: #93c5fd;
+  --tag-border: rgba(59, 130, 246, 0.25);
+  --success: #10b981;
+  --success-bg: rgba(16, 185, 129, 0.12);
+  --danger: #ef4444;
+  --font-head: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  --radius-sm: 0.5rem;
+  --radius-md: 0.85rem;
+  --radius-lg: 1.25rem;
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.25);
+  --shadow-md: 0 10px 25px -5px rgba(0, 0, 0, 0.35), 0 8px 10px -6px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 20px 35px -10px rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+}
+
+:root[data-theme="light"] {
+  --bg: #f8fafc;
+  --bg-subtle: #f1f5f9;
+  --panel: #ffffff;
+  --panel-hover: #f8fafc;
+  --panel-border: rgba(15, 23, 42, 0.08);
+  --panel-border-focus: rgba(37, 99, 235, 0.3);
+  --ink: #1e293b;
+  --ink-heading: #0f172a;
+  --muted: #64748b;
+  --line: rgba(15, 23, 42, 0.08);
+  --accent: #2563eb;
+  --accent-gradient: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+  --accent-glow: rgba(37, 99, 235, 0.18);
+  --accent-ink: #ffffff;
+  --tag-bg: rgba(37, 99, 235, 0.08);
+  --tag-ink: #1d4ed8;
+  --tag-border: rgba(37, 99, 235, 0.2);
+  --shadow-sm: 0 2px 6px rgba(15, 23, 42, 0.06);
+  --shadow-md: 0 10px 25px -5px rgba(15, 23, 42, 0.07), 0 8px 10px -6px rgba(15, 23, 42, 0.05);
+  --shadow-lg: 0 20px 35px -10px rgba(15, 23, 42, 0.1);
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    --bg: #f8fafc;
+    --bg-subtle: #f1f5f9;
+    --panel: #ffffff;
+    --panel-hover: #f8fafc;
+    --panel-border: rgba(15, 23, 42, 0.08);
+    --panel-border-focus: rgba(37, 99, 235, 0.3);
+    --ink: #1e293b;
+    --ink-heading: #0f172a;
+    --muted: #64748b;
+    --line: rgba(15, 23, 42, 0.08);
+    --accent: #2563eb;
+    --accent-gradient: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+    --accent-glow: rgba(37, 99, 235, 0.18);
+    --accent-ink: #ffffff;
+    --tag-bg: rgba(37, 99, 235, 0.08);
+    --tag-ink: #1d4ed8;
+    --tag-border: rgba(37, 99, 235, 0.2);
+    --shadow-sm: 0 2px 6px rgba(15, 23, 42, 0.06);
+    --shadow-md: 0 10px 25px -5px rgba(15, 23, 42, 0.07), 0 8px 10px -6px rgba(15, 23, 42, 0.05);
+    --shadow-lg: 0 20px 35px -10px rgba(15, 23, 42, 0.1);
+  }
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5.5rem;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  line-height: 1.65;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Subtle Ambient Gradient Background */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  max-width: 80rem;
+  height: 600px;
+  background: radial-gradient(circle at 50% 10%, var(--accent-glow) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.7;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.wrap {
+  width: 100%;
+  max-width: 68rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* HEADER & NAVBAR */
+header.top {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: color-mix(in srgb, var(--bg) 85%, transparent);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--line);
+  transition: border-color 0.3s ease;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.9rem 0;
+  gap: 1rem;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 1.2rem;
+  letter-spacing: -0.02em;
+  color: var(--ink-heading);
+}
+
+.brand-badge {
+  width: 9px;
+  height: 9px;
+  background: var(--success);
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--success);
+  animation: pulseDot 2s infinite ease-in-out;
+}
+
+@keyframes pulseDot {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.3); opacity: 0.7; }
+}
+
+nav .nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+nav .links {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+  font-weight: 500;
+  font-size: 0.92rem;
+}
+
+nav .links a {
+  color: var(--muted);
+  transition: color 0.2s ease;
+  position: relative;
+  padding: 0.25rem 0;
+}
+
+nav .links a:hover,
+nav .links a[aria-current="true"] {
+  color: var(--ink-heading);
+}
+
+nav .links a[aria-current="true"]::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--accent);
+  border-radius: 2px;
+}
+
+.tool-btns {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* BUTTONS */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.925rem;
+  padding: 0.65rem 1.25rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--panel-border);
+  background: var(--panel);
+  color: var(--ink);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+  box-shadow: var(--shadow-sm);
+}
+
+.btn:hover {
+  background: var(--panel-hover);
+  border-color: var(--line);
+  transform: translateY(-1px);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn.primary {
+  background: var(--accent-gradient);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--accent-ink);
+  box-shadow: 0 4px 14px var(--accent-glow);
+}
+
+.btn.primary:hover {
+  filter: brightness(1.1);
+  box-shadow: 0 6px 20px var(--accent-glow);
+  transform: translateY(-2px);
+}
+
+.btn.sm {
+  padding: 0.38rem 0.75rem;
+  font-size: 0.85rem;
+  border-radius: 0.45rem;
+}
+
+.btn-icon {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  fill: currentColor;
+}
+
+/* HERO SECTION WITH PROFILE CARD */
+.hero {
+  padding: 4.5rem 0 3.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-layout {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  margin-bottom: 3.5rem;
+}
+
+@media (max-width: 860px) {
+  .hero-layout {
+    grid-template-columns: 1fr;
+    gap: 2.25rem;
+  }
+}
+
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--success-bg);
+  color: var(--success);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  font-family: var(--font-mono);
+  font-size: 0.825rem;
+  font-weight: 500;
+  padding: 0.35rem 0.85rem;
+  border-radius: 2rem;
+  margin-bottom: 1.25rem;
+}
+
+.status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--success);
+  box-shadow: 0 0 6px var(--success);
+}
+
+h1 {
+  font-family: var(--font-head);
+  font-weight: 800;
+  font-size: clamp(2.3rem, 5.5vw, 3.8rem);
+  line-height: 1.1;
+  letter-spacing: -0.035em;
+  color: var(--ink-heading);
+  margin-bottom: 1.25rem;
+}
+
+.gradient-text {
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.lede {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: var(--muted);
+  margin-bottom: 2rem;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* PROFILE CARD VISUAL */
+.hero-profile-card {
+  background: var(--panel);
+  border: 1px solid var(--panel-border);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.hero-profile-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--panel-border-focus);
+}
+
+.hero-profile-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--accent-gradient);
+}
+
+.avatar-ring {
+  width: 5.5rem;
+  height: 5.5rem;
+  border-radius: 50%;
+  background: var(--accent-gradient);
+  padding: 3px;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 0 20px var(--accent-glow);
+}
+
+.avatar-inner {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-head);
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: var(--ink-heading);
+  letter-spacing: -0.02em;
+}
+
+.profile-name {
+  font-family: var(--font-head);
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: var(--ink-heading);
+  margin-bottom: 0.25rem;
+}
+
+.profile-title {
+  font-size: 0.9rem;
+  color: var(--accent);
+  font-weight: 600;
+  font-family: var(--font-mono);
+  margin-bottom: 0.75rem;
+}
+
+.profile-tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.4rem;
+  margin-bottom: 1.25rem;
+}
+
+.profile-tag {
+  background: var(--bg-subtle);
+  border: 1px solid var(--panel-border);
+  color: var(--ink);
+  font-size: 0.76rem;
+  font-weight: 500;
+  padding: 0.2rem 0.55rem;
+  border-radius: 0.4rem;
+}
+
+.profile-location {
+  font-size: 0.85rem;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+/* STATS ROW */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+  gap: 1rem;
+  width: 100%;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line);
+}
+
+.stat-card {
+  background: var(--panel);
+  border: 1px solid var(--panel-border);
+  padding: 1.25rem 1.4rem;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--line);
+}
+
+.stat-value {
+  font-family: var(--font-head);
+  font-size: 1.85rem;
+  font-weight: 700;
+  color: var(--ink-heading);
+  letter-spacing: -0.02em;
+}
+
+.stat-label {
+  font-size: 0.875rem;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+/* GENERAL SECTION STYLING */
+section {
+  padding: 4.5rem 0;
+  border-top: 1px solid var(--line);
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.section-title-wrap h2 {
+  font-family: var(--font-head);
+  font-size: 2.1rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--ink-heading);
+  margin-bottom: 0.35rem;
+}
+
+.section-desc {
+  color: var(--muted);
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* SEARCH & FILTER CONTROLS */
+.project-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+#chips {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.chip {
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  font-weight: 600;
+  border: 1px solid var(--panel-border);
+  background: var(--panel);
+  color: var(--muted);
+  border-radius: 2rem;
+  padding: 0.4rem 1.1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.chip:hover {
+  color: var(--ink-heading);
+  border-color: var(--line);
+}
+
+.chip[aria-pressed="true"] {
+  background: var(--accent);
+  color: var(--accent-ink);
+  border-color: var(--accent);
+  box-shadow: 0 2px 10px var(--accent-glow);
+}
+
+.search-box-wrap {
+  position: relative;
+  min-width: 16rem;
+  max-width: 100%;
+}
+
+.search-icon {
+  position: absolute;
+  left: 0.85rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  fill: var(--muted);
+  pointer-events: none;
+}
+
+.search-input {
+  width: 100%;
+  background: var(--panel);
+  border: 1px solid var(--panel-border);
+  border-radius: 2rem;
+  padding: 0.45rem 1rem 0.45rem 2.4rem;
+  font-size: 0.88rem;
+  color: var(--ink);
+  transition: border-color 0.2s ease;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+/* PROJECT CARDS GRID */
+#grid {
+  display: grid;
+  gap: 1.75rem;
+  grid-template-columns: repeat(auto-fit, minmax(19.5rem, 1fr));
+}
+
+.project-card {
+  position: relative;
+  background: var(--panel);
+  border: 1px solid var(--panel-border);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--panel-border-focus);
+  box-shadow: var(--shadow-md);
+}
+
+.project-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.project-category {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--tag-bg);
+  color: var(--tag-ink);
+  border: 1px solid var(--tag-border);
+  padding: 0.25rem 0.65rem;
+  border-radius: 0.4rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  font-family: var(--font-mono);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.project-card h3 {
+  font-family: var(--font-head);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--ink-heading);
+  margin-top: 0.25rem;
+  letter-spacing: -0.01em;
+}
+
+.project-card p.project-desc {
+  color: var(--muted);
+  font-size: 0.98rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* TECH STACK BADGES */
+.stack-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.25rem;
+}
+
+.stack-pill {
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  font-weight: 500;
+  background: var(--bg-subtle);
+  border: 1px solid var(--panel-border);
+  color: var(--ink);
+  padding: 0.2rem 0.55rem;
+  border-radius: 0.35rem;
+}
+
+.project-footer {
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.project-role {
+  font-size: 0.85rem;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.project-actions {
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+}
+
+.action-icon-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  background: var(--bg-subtle);
+  border: 1px solid var(--panel-border);
+  color: var(--ink);
+  padding: 0.35rem 0.65rem;
+  border-radius: 0.4rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.action-icon-link:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* SKILLS SECTION */
+.skills-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+}
+
+.skill-category-card {
+  background: var(--panel);
+  border: 1px solid var(--panel-border);
+  border-radius: var(--radius-lg);
+  padding: 1.65rem;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+  position: relative;
+}
+
+.skill-category-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--panel-border-focus);
+}
+
+.skill-cat-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.skill-icon-bubble {
+  width: 2.35rem;
+  height: 2.35rem;
+  border-radius: 0.65rem;
+  background: var(--tag-bg);
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+.skill-cat-title {
+  font-family: var(--font-head);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--ink-heading);
+}
+
+.skills-pill-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+}
+
+.skills-pill-cloud li {
+  display: inline-flex;
+  align-items: center;
+  background: var(--bg-subtle);
+  border: 1px solid var(--panel-border);
+  color: var(--ink);
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 0.35rem 0.85rem;
+  border-radius: 2rem;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.skills-pill-cloud li:hover {
+  border-color: var(--accent);
+  color: var(--ink-heading);
+}
+
+/* CERTIFICATIONS SECTION */
+.cert-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+}
+
+.cert-card {
+  background: var(--panel);
+  border: 1px solid var(--panel-border);
+  border-radius: var(--radius-lg);
+  padding: 1.65rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  position: relative;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.cert-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--panel-border-focus);
+}
+
+.cert-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.cert-badge {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--accent);
+  background: var(--tag-bg);
+  border: 1px solid var(--tag-border);
+  padding: 0.2rem 0.55rem;
+  border-radius: 0.35rem;
+}
+
+.cert-title {
+  font-family: var(--font-head);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--ink-heading);
+}
+
+.cert-issuer {
+  font-size: 0.88rem;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.cert-desc {
+  font-size: 0.925rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* ACHIEVEMENTS & MILESTONES SECTION */
+.achieve-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+}
+
+.achieve-card {
+  background: var(--panel);
+  border: 1px solid var(--panel-border);
+  border-radius: var(--radius-lg);
+  padding: 1.65rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  gap: 1.1rem;
+  align-items: flex-start;
+  position: relative;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.achieve-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--panel-border-focus);
+}
+
+.achieve-icon-box {
+  width: 2.85rem;
+  height: 2.85rem;
+  border-radius: 0.75rem;
+  background: var(--tag-bg);
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  flex-shrink: 0;
+}
+
+.achieve-content h3 {
+  font-family: var(--font-head);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--ink-heading);
+  margin-bottom: 0.2rem;
+}
+
+.achieve-org {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 0.45rem;
+}
+
+.achieve-desc {
+  font-size: 0.925rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* EXPERIENCE & EDUCATION TIMELINE */
+.timeline {
+  position: relative;
+  padding-left: 2rem;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 0.45rem;
+  top: 0.5rem;
+  bottom: 0.5rem;
+  width: 2px;
+  background: var(--line);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 2.5rem;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -2rem;
+  top: 0.35rem;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 3px solid var(--bg);
+  box-shadow: 0 0 10px var(--accent-glow);
+}
+
+.timeline-card {
+  background: var(--panel);
+  border: 1px solid var(--panel-border);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+  position: relative;
+}
+
+.timeline-card:hover {
+  transform: translateX(4px);
+  border-color: var(--panel-border-focus);
+}
+
+.timeline-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.4rem;
+}
+
+.timeline-title {
+  font-family: var(--font-head);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--ink-heading);
+}
+
+.timeline-time {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--accent);
+  background: var(--tag-bg);
+  padding: 0.2rem 0.6rem;
+  border-radius: 0.35rem;
+  border: 1px solid var(--tag-border);
+}
+
+.timeline-body {
+  color: var(--muted);
+  font-size: 0.98rem;
+  line-height: 1.6;
+}
+
+/* ABOUT SECTION */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+@media (max-width: 768px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.about-card {
+  background: var(--panel);
+  border: 1px solid var(--panel-border);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.about-card p {
+  color: var(--muted);
+  margin-bottom: 1.25rem;
+  line-height: 1.7;
+}
+
+.about-card p:last-child {
+  margin-bottom: 0;
+}
+
+.about-highlights {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.highlight-item {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  padding: 1.1rem;
+  background: var(--bg-subtle);
+  border: 1px solid var(--panel-border);
+  border-radius: var(--radius-md);
+}
+
+.highlight-icon {
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+.highlight-text h4 {
+  font-family: var(--font-head);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--ink-heading);
+  margin-bottom: 0.2rem;
+}
+
+.highlight-text p {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin: 0;
+}
+
+/* CONTACT SECTION */
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 2.5rem;
+}
+
+@media (max-width: 820px) {
+  .contact-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.contact-form-wrap {
+  background: var(--panel);
+  border: 1px solid var(--panel-border);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  font-size: 0.88rem;
+  margin-bottom: 0.45rem;
+  color: var(--ink-heading);
+}
+
+input, textarea {
+  width: 100%;
+  font-family: inherit;
+  font-size: 0.98rem;
+  color: var(--ink);
+  background: var(--bg-subtle);
+  border: 1px solid var(--panel-border);
+  border-radius: var(--radius-sm);
+  padding: 0.75rem 1rem;
+  transition: all 0.2s ease;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  background: var(--panel);
+  box-shadow: 0 0 0 3px var(--accent-glow);
+}
+
+textarea {
+  min-height: 7.5rem;
+  resize: vertical;
+}
+
+.contact-info-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.contact-channel {
+  background: var(--panel);
+  border: 1px solid var(--panel-border);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.contact-channel:hover {
+  transform: translateY(-2px);
+  border-color: var(--panel-border-focus);
+}
+
+.contact-channel-icon {
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 0.75rem;
+  background: var(--tag-bg);
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.contact-channel-details {
+  flex-grow: 1;
+}
+
+.channel-label {
+  font-size: 0.8rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.channel-value {
+  font-weight: 600;
+  font-size: 0.98rem;
+  color: var(--ink-heading);
+  word-break: break-all;
+}
+
+.copy-pill-btn {
+  background: var(--bg-subtle);
+  border: 1px solid var(--panel-border);
+  color: var(--ink);
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 0.35rem 0.7rem;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.copy-pill-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* FOOTER */
+footer {
+  padding: 3.5rem 0 4rem;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.925rem;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.footer-links {
+  display: flex;
+  gap: 0.85rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* MODAL (CASE STUDY) */
+dialog {
+  border: 1px solid var(--panel-border);
+  background: var(--panel);
+  color: var(--ink);
+  border-radius: var(--radius-lg);
+  max-width: 44rem;
+  width: calc(100% - 2.5rem);
+  padding: 2.25rem;
+  max-height: 88vh;
+  box-shadow: var(--shadow-lg);
+  margin: auto;
+  position: fixed;
+  inset: 0;
+}
+
+dialog::backdrop {
+  background: rgba(4, 8, 18, 0.75);
+  backdrop-filter: blur(6px);
+}
+
+dialog h2 {
+  font-family: var(--font-head);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--ink-heading);
+  margin-bottom: 0.5rem;
+}
+
+.dialog-meta {
+  color: var(--muted);
+  font-size: 0.925rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.case-section {
+  margin-top: 1.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--line);
+}
+
+.case-section h3 {
+  font-family: var(--font-head);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--ink-heading);
+  margin-bottom: 0.45rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.case-section p {
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.dialog-close-btn {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  background: var(--bg-subtle);
+  border: 1px solid var(--panel-border);
+  color: var(--ink);
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  line-height: 1;
+  transition: all 0.2s ease;
+}
+
+.dialog-close-btn:hover {
+  background: var(--danger);
+  color: #ffffff;
+  border-color: var(--danger);
+}
+
+#copy-toast {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: var(--success);
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.88rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: 0.5rem;
+  box-shadow: var(--shadow-md);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 100;
+}
+
+#copy-toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 680px) {
+  nav .links {
+    display: none;
+  }
+  .hero {
+    padding: 3rem 0 2rem;
+  }
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+  .hero-actions .btn {
+    width: 100%;
+  }
+  section {
+    padding: 3rem 0;
+  }
+}
+
+/* PRINT MEDIA (CLEAN RESUME EXPORT) */
+@media print {
+  header.top, #copy-toast, .tool-btns, .hero-actions, .contact-form-wrap, .chip, .project-actions, .search-box-wrap {
+    display: none !important;
+  }
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+  body::before {
+    display: none !important;
+  }
+  .project-card, .timeline-card, .stat-card, .skill-category-card, .cert-card, .achieve-card, .hero-profile-card {
+    border: 1px solid #ccc !important;
+    box-shadow: none !important;
+    background: #ffffff !important;
+  }
+  .gradient-text {
+    background: none !important;
+    -webkit-text-fill-color: #000000 !important;
+    color: #000000 !important;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- STICKY TOP NAVBAR -->
+<header class="top">
+  <div class="wrap">
+    <nav>
+      <a href="#" class="brand">
+        <span class="brand-badge" aria-hidden="true"></span>
+        <span>Sameer Ahmad</span>
+      </a>
+
+      <div class="nav-actions">
+        <div class="links">
+          <a href="#work">Projects</a>
+          <a href="#skills">Skills</a>
+          <a href="#certifications">Certificates</a>
+          <a href="#experience">Experience</a>
+          <a href="#achievements">Achievements</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </div>
+
+        <div class="tool-btns">
+          <button class="btn sm" id="theme-btn" type="button" title="Switch Theme">
+            <svg class="btn-icon" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z"/></svg>
+            <span id="theme-text">Theme</span>
+          </button>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- HERO SECTION WITH PROFILE CARD -->
+  <section class="hero">
+    <div class="hero-layout">
+      <div class="hero-main">
+        <div class="status-pill">
+          <span class="status-dot"></span>
+          <span>Open to Internships &amp; Junior Roles</span>
+        </div>
+
+        <h1>I build <span class="gradient-text">mobile apps, AI tools</span> &amp; CRM software.</h1>
+        
+        <p class="lede">
+          I'm a Computer Science student at NFC IET (BSCS, 7th semester) who turns complex business requirements into high-impact software: an LLM-powered mobile education app, GoHighLevel (GHL) clinic CRM automations, an inventory tracking system for a tyre business, a web mini compiler, and a multi-tenant SaaS CRM platform.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn primary" href="#work">
+            <span>Explore Selected Work</span>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+          </a>
+          <a class="btn" href="#contact">Get in Touch</a>
+          <button class="btn" id="quick-copy-email" type="button">
+            <svg class="btn-icon" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+            <span>Copy Email</span>
+          </button>
+          <button class="btn" id="print-resume-btn" type="button">
+            <svg class="btn-icon" viewBox="0 0 24 24"><path d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-3 11H8v-5h8v5zm3-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-1-9H6v4h12V3z"/></svg>
+            <span>Print Resume</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Hero Profile Visual Badge -->
+      <div class="hero-profile-card">
+        <div class="avatar-ring">
+          <div class="avatar-inner">SA</div>
+        </div>
+        <div class="profile-name">Sameer Ahmad</div>
+        <div class="profile-title">Full Stack &amp; AI Developer</div>
+        <div class="profile-tags">
+          <span class="profile-tag">📱 Mobile Apps</span>
+          <span class="profile-tag">🤖 AI &amp; LLMs</span>
+          <span class="profile-tag">🏢 GHL &amp; CRM</span>
+          <span class="profile-tag">⚡ Compilers</span>
+        </div>
+        <div class="profile-location">📍 NFC IET · BSCS 7th Sem · Open to Roles</div>
+      </div>
+    </div>
+
+    <!-- STATS ROW -->
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-value">7th Sem</div>
+        <div class="stat-label">NFC IET (BSCS)</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">6+ Systems</div>
+        <div class="stat-label">Shipped &amp; Client Projects</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">3 Months</div>
+        <div class="stat-label">CRM Internship Exp.</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">AI + Mobile</div>
+        <div class="stat-label">Core Focus Area</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SELECTED WORK / PROJECTS -->
+  <section id="work">
+    <div class="section-header">
+      <div class="section-title-wrap">
+        <h2>Selected Projects</h2>
+        <p class="section-desc">Production applications, AI-integrated mobile tools, compiler systems, and enterprise platforms.</p>
+      </div>
+    </div>
+
+    <!-- Filter chips and search bar -->
+    <div class="project-controls">
+      <div id="chips" role="group" aria-label="Filter projects"></div>
+      <div class="search-box-wrap">
+        <svg class="search-icon" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+        <input type="text" class="search-input" id="project-search-input" placeholder="Search by tech or title...">
+      </div>
+    </div>
+
+    <div id="grid">
+      <!-- Dynamically populated via JS -->
+    </div>
+  </section>
+
+  <!-- SKILLS & CAPABILITIES -->
+  <section id="skills">
+    <div class="section-header">
+      <div class="section-title-wrap">
+        <h2>Technical Stack &amp; Skills</h2>
+        <p class="section-desc">Technologies, frameworks, and domains I actively engineer with.</p>
+      </div>
+    </div>
+
+    <div class="skills-grid" id="skills-container">
+      <!-- Dynamically populated via JS -->
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS & COURSES -->
+  <section id="certifications">
+    <div class="section-header">
+      <div class="section-title-wrap">
+        <h2>Certifications &amp; Training</h2>
+        <p class="section-desc">Verified technical credentials, specializations, and professional training.</p>
+      </div>
+    </div>
+
+    <div class="cert-grid" id="certs-container">
+      <!-- Dynamically populated via JS -->
+    </div>
+  </section>
+
+  <!-- EXPERIENCE & EDUCATION TIMELINE -->
+  <section id="experience">
+    <div class="section-header">
+      <div class="section-title-wrap">
+        <h2>Education &amp; Experience</h2>
+        <p class="section-desc">Practical industry roles, academic training, and foundational coursework.</p>
+      </div>
+    </div>
+
+    <div class="timeline" id="jobs">
+      <!-- Dynamically populated via JS -->
+    </div>
+  </section>
+
+  <!-- KEY ACHIEVEMENTS & MILESTONES -->
+  <section id="achievements">
+    <div class="section-header">
+      <div class="section-title-wrap">
+        <h2>Achievements &amp; Milestones</h2>
+        <p class="section-desc">Key milestones, delivery track record, and academic distinctions.</p>
+      </div>
+    </div>
+
+    <div class="achieve-grid" id="achieve-container">
+      <!-- Dynamically populated via JS -->
+    </div>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section id="about">
+    <div class="section-header">
+      <div class="section-title-wrap">
+        <h2>About Sameer</h2>
+        <p class="section-desc">Background, problem-solving philosophy, and what drives my work.</p>
+      </div>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-card">
+        <p>
+          I'm Sameer Ahmad, a Computer Science student in my 7th semester at NFC Institute of Engineering and Technology (NFC IET). I specialize in turning real-world business problems into reliable software—from building mobile applications empowered by Large Language Models to architecting multi-channel GoHighLevel (GHL) CRM automations and full-stack web platforms.
+        </p>
+        <p>
+          My experience spans a 3-month CRM internship, client automation delivery for aesthetic clinics (including two-way doctor-patient appointment reminders), compiler design, and inventory software. I am eagerly looking for an internship or junior role where I can contribute to high-velocity engineering teams, learn from seasoned mentors, and ship meaningful products.
+        </p>
+      </div>
+
+      <div class="about-highlights">
+        <div class="highlight-item">
+          <div class="highlight-icon">⚡</div>
+          <div class="highlight-text">
+            <h4>End-to-End Ownership</h4>
+            <p>From database schema design and API integration to intuitive mobile & web user interfaces.</p>
+          </div>
+        </div>
+        <div class="highlight-item">
+          <div class="highlight-icon">🤖</div>
+          <div class="highlight-text">
+            <h4>AI &amp; LLM Orchestration</h4>
+            <p>Practical integration of modern language models into consumer mobile and productivity apps.</p>
+          </div>
+        </div>
+        <div class="highlight-item">
+          <div class="highlight-icon">💼</div>
+          <div class="highlight-text">
+            <h4>Business &amp; CRM Mindset</h4>
+            <p>Experience understanding workflows, tracking stock/inventory, and reducing human error in operations.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section id="contact">
+    <div class="section-header">
+      <div class="section-title-wrap">
+        <h2>Let's Connect</h2>
+        <p class="section-desc">Have an opportunity, internship, or project to discuss? Send a message directly.</p>
+      </div>
+    </div>
+
+    <div class="contact-layout">
+      <!-- Contact Form -->
+      <div class="contact-form-wrap">
+        <div class="form-group">
+          <label for="contact-name">Your Name</label>
+          <input type="text" id="contact-name" placeholder="e.g. Alex Morgan" autocomplete="name">
+        </div>
+        <div class="form-group">
+          <label for="contact-subject">Subject</label>
+          <input type="text" id="contact-subject" placeholder="Internship Opportunity / Project Inquiry">
+        </div>
+        <div class="form-group">
+          <label for="contact-msg">Message</label>
+          <textarea id="contact-msg" placeholder="Hi Sameer, I came across your portfolio and wanted to discuss..."></textarea>
+        </div>
+        <a class="btn primary" id="send-email-btn" href="#contact" style="width: 100%;">
+          <span>Launch Email Client</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+        </a>
+      </div>
+
+      <!-- Quick Channels -->
+      <div class="contact-info-cards">
+        <div class="contact-channel">
+          <div class="contact-channel-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          </div>
+          <div class="contact-channel-details">
+            <div class="channel-label">Email Address</div>
+            <div class="channel-value" id="email-val">shykhsameeer@gmail.com</div>
+          </div>
+          <button class="copy-pill-btn" type="button" data-copy="email">Copy</button>
+        </div>
+
+        <div class="contact-channel">
+          <div class="contact-channel-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.45a1.62 1.62 0 1 0 0 3.24 1.62 1.62 0 0 0 0-3.24z"/></svg>
+          </div>
+          <div class="contact-channel-details">
+            <div class="channel-label">LinkedIn</div>
+            <div class="channel-value">linkedin.com/in/sameer-ahmad</div>
+          </div>
+          <a class="copy-pill-btn" id="li-link" href="https://linkedin.com/in/sameer-ahmad" target="_blank" rel="noopener">Open</a>
+        </div>
+
+        <div class="contact-channel">
+          <div class="contact-channel-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
+          </div>
+          <div class="contact-channel-details">
+            <div class="channel-label">GitHub</div>
+            <div class="channel-value">github.com/Sameer335-prog</div>
+          </div>
+          <a class="copy-pill-btn" id="gh-link" href="https://github.com/Sameer335-prog" target="_blank" rel="noopener">Open</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap footer-inner">
+    <div>
+      <div>&copy; <span id="year"></span> <strong>Sameer Ahmad</strong>. Built with speed, performance &amp; modern standards.</div>
+      <div style="font-size:0.85rem; margin-top:0.35rem; color: var(--muted);">Mobile App Developer &amp; Computer Science Student.</div>
+    </div>
+
+    <div class="footer-links">
+      <a class="btn sm" href="#contact">Contact Sameer</a>
+      <a class="btn sm" href="https://github.com/Sameer335-prog" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn sm" href="https://linkedin.com/in/sameer-ahmad" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+</footer>
+
+<!-- CASE STUDY MODAL -->
+<dialog id="case-modal" aria-label="Project Case Study">
+  <button class="dialog-close-btn" type="button" data-close aria-label="Close modal">&times;</button>
+  <div id="modal-content"></div>
+</dialog>
+
+<div id="copy-toast">✓ Copied to clipboard!</div>
+
+<script>
+(function() {
+  'use strict';
+
+  var THEME_KEY = 'portfolio-theme-v2';
+
+  // Portfolio Data for Sameer Ahmad
+  var DATA = {
+    name: 'Sameer Ahmad',
+    email: 'shykhsameeer@gmail.com',
+    li: 'https://linkedin.com/in/sameer-ahmad',
+    gh: 'https://github.com/Sameer335-prog',
+    projects: [
+      {
+        t: 'Aesthetic Clinic CRM & Appointment Automation',
+        d: 'An end-to-end GoHighLevel (GHL) workflow automation system built for an aesthetic clinic featuring doctor-patient appointment booking, automated 2-way reminder notifications, and an interactive services catalog.',
+        tag: 'CRM & Automation',
+        role: 'GHL Automation Specialist · Client Project',
+        demo: '#',
+        gh: '#',
+        stack: ['GoHighLevel (GHL)', 'CRM Automation', '2-Way SMS & Email Reminders', 'Doctor Appointment Scheduling', 'Webhooks'],
+        problem: 'Aesthetic clinics frequently face high no-show rates and scheduling friction when booking doctor consultations manually, while patients lack upfront service breakdowns.',
+        process: 'Architected custom GHL funnels and automation triggers: created a digital service menu showcase, synchronized calendar availability, and configured automated two-way reminder triggers sent to both the doctor and the patient (24h and 1h prior to appointment).',
+        result: 'Reduced patient no-shows, kept clinic doctors updated in real time with appointment notifications, and delivered a seamless booking-to-treatment workflow.'
+      },
+      {
+        t: 'EduNexus',
+        d: 'An AI-powered mobile learning platform integrating LLMs to provide real-time tutoring, personalized quizzes, and contextual answers for students.',
+        tag: 'Mobile & AI',
+        role: 'Lead Developer · 2024',
+        demo: '#',
+        gh: 'https://github.com/Sameer335-prog',
+        stack: ['React Native / Mobile', 'OpenAI / LLM API', 'Python', 'FastAPI'],
+        problem: 'Students frequently face roadblocks while studying independently and cannot get instant, context-aware assistance tailored to their learning materials.',
+        process: 'Architected a mobile app interface connecting to large language models via a lightweight API. Implemented prompt pipelines for structured concept breakdown, quiz generation, and conversation history memory.',
+        result: 'Working mobile learning prototype with responsive AI assistance, reducing turnaround time for concept explanations from hours to seconds.'
+      },
+      {
+        t: 'Web Mini Compiler',
+        d: 'An interactive browser-based compiler and syntax analyzer built as a CS university project. Implements lexical analysis (tokenization), recursive descent parsing, Abstract Syntax Tree (AST) generation, and live syntax validation.',
+        tag: 'Compiler & Systems',
+        role: 'Compiler Designer · University Project',
+        demo: '#',
+        gh: 'https://github.com/Sameer335-prog',
+        stack: ['JavaScript / ES6', 'Lexical Analyzer (Lexer)', 'AST Parser', 'Syntax Highlighting'],
+        problem: 'Understanding compiler mechanics—tokenizing source code, detecting syntax errors, and generating executable representation—can be difficult without visual interactive execution feedback.',
+        process: 'Engineered a multi-phase mini compiler pipeline directly in the browser: built a deterministic lexer for grammar tokens, a syntax analyzer generating an Abstract Syntax Tree (AST), and an interactive UI that displays tokens, parse tree nodes, and syntax errors in real-time.',
+        result: 'Achieved high marks in university coursework; provides an interactive workbench for inspecting token streams, syntax error locations, and AST nodes.'
+      },
+      {
+        t: 'Car Management System',
+        d: 'A responsive full-stack vehicle management web application providing car inventory cataloging, customer rental/sales booking, maintenance scheduling, and payment status tracking.',
+        tag: 'Web Development',
+        role: 'Full Stack Web Developer · University Project',
+        demo: '#',
+        gh: 'https://github.com/Sameer335-prog',
+        stack: ['HTML5 / CSS3', 'JavaScript / Node.js', 'Relational DB (SQL)', 'RESTful CRUD APIs'],
+        problem: 'Vehicle rental and dealership businesses need a centralized dashboard to track vehicle availability, service histories, client bookings, and rental revenues to prevent double-booking.',
+        process: 'Developed a modular web application with role-based access for admins and customers. Implemented dynamic vehicle filtering (make, model, fuel type, price), booking management with date conflict checks, and maintenance logs.',
+        result: 'A complete, responsive web application streamlining car booking workflows, tracking vehicle availability, and reducing reservation bottlenecks.'
+      },
+      {
+        t: 'Ahsan Tyre Management System',
+        d: 'Comprehensive inventory & stock management system built for Ahsan Tyre to centralize multi-brand stock movements, daily sales, and supplier transactions.',
+        tag: 'Business Systems',
+        role: 'Full Stack Developer · 2024',
+        demo: '#',
+        gh: 'https://github.com/Sameer335-prog',
+        stack: ['Web Architecture', 'Relational DB', 'Inventory Analytics', 'Reporting'],
+        problem: 'Managing thousands of tyres across multiple brands and specifications with manual record-keeping caused inventory discrepancies and slow stock reconciliations.',
+        process: 'Developed a relational inventory ledger that tracks inflows, sales orders, brand categorizations, and remaining shelf counts with instant ledger reconciliation.',
+        result: 'Eliminated manual counting errors, automated stock level alerts, and provided business owners with instant clarity on daily revenue and top-selling tyre models.'
+      },
+      {
+        t: 'HMS CRM SaaS Platform',
+        d: 'A multi-tenant Cloud CRM platform delivering customer pipeline management, automated follow-ups, and lead conversion workflows without client installation.',
+        tag: 'SaaS CRM',
+        role: 'SaaS Developer · 2024',
+        demo: '#',
+        gh: 'https://github.com/Sameer335-prog',
+        stack: ['SaaS Architecture', 'CRM Pipelines', 'REST APIs', 'Auth & Security'],
+        problem: 'Sales teams were losing prospective deals because follow-ups, communications, and customer histories were scattered across separate messaging tools and spreadsheets.',
+        process: 'Engineered a modern SaaS CRM web application featuring contact stages, deal tracking boards, activity logs, and automated reminder triggers for sales reps.',
+        result: 'Successfully deployed cloud CRM system ready for multi-user teams, accelerating follow-up response times and centralizing customer interaction history.'
+      }
+    ],
+    skillsCategories: [
+      {
+        title: 'Mobile & Web Development',
+        icon: '💻',
+        items: ['Mobile App Development', 'Full-Stack Web Dev', 'React Native / Flutter', 'JavaScript & TypeScript', 'HTML5 / CSS3 / Responsive', 'RESTful APIs']
+      },
+      {
+        title: 'AI, LLMs & Backend',
+        icon: '🤖',
+        items: ['LLM Prompt Engineering', 'OpenAI & HuggingFace APIs', 'Python Backend', 'FastAPI / Node.js', 'Workflow Automation']
+      },
+      {
+        title: 'Business Systems & CRM',
+        icon: '🏢',
+        items: ['GoHighLevel (GHL) Automation', '2-Way SMS & Email Reminders', 'CRM Workflow Automation', 'SaaS Platform Architecture', 'Car & Tyre Inventory Systems']
+      },
+      {
+        title: 'CS Fundamentals & Compilers',
+        icon: '⚡',
+        items: ['Mini Compiler Construction', 'Lexical Analysis & ASTs', 'Relational Databases (SQL)', 'Git & Version Control', 'OOP & Data Structures']
+      }
+    ],
+    certifications: [
+      {
+        title: 'Web Design & Development: Basics & Coding',
+        issuer: 'University of Michigan (Coursera)',
+        badge: '🎓 Univ. of Michigan',
+        desc: 'Comprehensive training in foundational web development: responsive HTML5 semantic structure, modern CSS styling models, and JavaScript interactive logic.'
+      },
+      {
+        title: 'Prompt Engineering & Generative AI Applications',
+        issuer: 'DeepLearning.AI / OpenAI Specialization',
+        badge: '🤖 AI Credential',
+        desc: 'Practical LLM API orchestration, prompt design patterns, few-shot conditioning, and building context-aware generative tools.'
+      },
+      {
+        title: 'Meta Full-Stack & Mobile Development Foundations',
+        issuer: 'Meta Professional Training',
+        badge: '📱 Mobile & Web',
+        desc: 'Component architecture, responsive UI design tokens, state synchronization, and client-server REST communication.'
+      },
+      {
+        title: 'Relational Database Design & SQL Optimization',
+        issuer: 'Computer Science Academic Program',
+        badge: '🗄️ Database & Systems',
+        desc: 'Relational schemas, 3NF normalization, index optimization, multi-table transactions, and database integrity constraints.'
+      },
+      {
+        title: 'Enterprise CRM Automation & Workflow Engineering',
+        issuer: 'Dreamweaver Internship Certification',
+        badge: '🏢 Enterprise CRM',
+        desc: 'Automation triggers, customer lifecycle pipelines, role-based access protocols, and CRM module customizations.'
+      }
+    ],
+    achievements: [
+      {
+        icon: '⚡',
+        title: 'Aesthetic Clinic GHL Automation Delivery',
+        org: 'GoHighLevel CRM Client Project',
+        desc: 'Designed and deployed an automated appointment notification engine for both doctors and patients, incorporating clinic service displays and automated follow-ups.'
+      },
+      {
+        icon: '🏆',
+        title: '3-Month CRM Internship Excellence',
+        org: 'Dreamweaver (August — November)',
+        desc: 'Delivered end-to-end automation workflows that streamlined client communication pipelines and reduced manual task friction.'
+      },
+      {
+        icon: '🚀',
+        title: '6+ Production & Academic Systems Delivered',
+        org: 'Full-Stack & Systems Engineering',
+        desc: 'From in-browser compiler parsing to GHL clinic automations, SaaS CRM platforms, and tyre inventory systems, demonstrating versatile full-stack mastery.'
+      },
+      {
+        icon: '🎓',
+        title: 'BSCS 7th Semester Academic Standing · NFC IET',
+        org: 'NFC Institute of Engineering & Technology',
+        desc: 'Consistent focus on advanced computer science topics: Automata & Compiler Construction, Artificial Intelligence, and Software Engineering.'
+      }
+    ],
+    jobs: [
+      {
+        t: 'CRM Intern · Dreamweaver',
+        w: 'August — November · 3 Months',
+        d: 'Hands-on industry internship configuring and automating CRM modules, managing customer lifecycle pipelines, and refining business workflow rules to improve team efficiency.'
+      },
+      {
+        t: 'BS Computer Science (BSCS) · NFC IET',
+        w: 'Currently in 7th Semester · NFC Institute of Engineering & Technology',
+        d: 'Rigorous computer science curriculum covering Compiler Construction, AI & Machine Learning, Database Management Systems, Object-Oriented Software Engineering, and Web Development.'
+      }
+    ]
+  };
+
+  var $ = function(s, r) { return (r || document).querySelector(s); };
+  var $$ = function(s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+
+  var currentFilter = 'All';
+  var searchQuery = '';
+
+  function escapeHtml(str) {
+    return String(str || '').replace(/[&<>"']/g, function(c) {
+      return {'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'}[c];
+    });
+  }
+
+  function updateContactLinks() {
+    var name = $('#contact-name') ? $('#contact-name').value.trim() : '';
+    var subject = $('#contact-subject') ? $('#contact-subject').value.trim() : '';
+    var message = $('#contact-msg') ? $('#contact-msg').value.trim() : '';
+
+    var email = DATA.email;
+    var mailSubject = subject || ('Inquiry from ' + (name || 'Portfolio Visitor'));
+    var mailBody = (name ? 'From: ' + name + '\n\n' : '') + message;
+
+    var sendBtn = $('#send-email-btn');
+    if (sendBtn) {
+      sendBtn.href = 'mailto:' + encodeURIComponent(email) +
+        '?subject=' + encodeURIComponent(mailSubject) +
+        '&body=' + encodeURIComponent(mailBody);
+    }
+  }
+
+  // Render Projects Grid with Filter & Search
+  function renderProjects() {
+    var tags = ['All'];
+    DATA.projects.forEach(function(p) {
+      if (p.tag && tags.indexOf(p.tag) === -1) {
+        tags.push(p.tag);
+      }
+    });
+
+    if (tags.indexOf(currentFilter) === -1) {
+      currentFilter = 'All';
+    }
+
+    var chipsContainer = $('#chips');
+    if (chipsContainer) {
+      chipsContainer.innerHTML = tags.map(function(t) {
+        var isPressed = t === currentFilter;
+        return '<button type="button" class="chip" aria-pressed="' + isPressed + '" data-filter-tag="' + escapeHtml(t) + '">' + escapeHtml(t) + '</button>';
+      }).join('');
+    }
+
+    var q = searchQuery.toLowerCase().trim();
+    var gridContainer = $('#grid');
+    if (gridContainer) {
+      var matchedCount = 0;
+      var cardsHtml = DATA.projects.map(function(p, i) {
+        if (currentFilter !== 'All' && p.tag !== currentFilter) return '';
+        
+        if (q) {
+          var matchTitle = (p.t || '').toLowerCase().indexOf(q) !== -1;
+          var matchDesc = (p.d || '').toLowerCase().indexOf(q) !== -1;
+          var matchTag = (p.tag || '').toLowerCase().indexOf(q) !== -1;
+          var matchStack = (p.stack || []).some(function(s) { return s.toLowerCase().indexOf(q) !== -1; });
+          if (!matchTitle && !matchDesc && !matchTag && !matchStack) return '';
+        }
+
+        matchedCount++;
+
+        var stackHtml = '';
+        if (Array.isArray(p.stack)) {
+          stackHtml = '<div class="stack-list">' + p.stack.map(function(item) {
+            return '<span class="stack-pill">' + escapeHtml(item) + '</span>';
+          }).join('') + '</div>';
+        }
+
+        var demoBtn = p.demo ? '<a class="action-icon-link" href="' + escapeHtml(p.demo) + '" target="_blank" rel="noopener"><span>Demo</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></a>' : '';
+        var ghBtn = p.gh ? '<a class="action-icon-link" href="' + escapeHtml(p.gh) + '" target="_blank" rel="noopener" title="GitHub Code"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg></a>' : '';
+
+        return (
+          '<article class="project-card">' +
+            '<div class="project-top">' +
+              '<span class="project-category">' + escapeHtml(p.tag) + '</span>' +
+            '</div>' +
+            '<h3>' + escapeHtml(p.t) + '</h3>' +
+            '<p class="project-desc">' + escapeHtml(p.d) + '</p>' +
+            stackHtml +
+            '<div class="project-footer">' +
+              '<span class="project-role">' + escapeHtml(p.role) + '</span>' +
+              '<div class="project-actions">' +
+                '<button class="btn sm" type="button" data-case="' + i + '">Details</button>' +
+                demoBtn +
+                ghBtn +
+              '</div>' +
+            '</div>' +
+          '</article>'
+        );
+      }).join('');
+
+      if (matchedCount === 0) {
+        gridContainer.innerHTML = '<div style="grid-column: 1 / -1; padding: 2rem; text-align: center; color: var(--muted); background: var(--panel); border-radius: var(--radius-md); border: 1px dashed var(--line);">No projects matching "' + escapeHtml(q) + '". Try another keyword or filter.</div>';
+      } else {
+        gridContainer.innerHTML = cardsHtml;
+      }
+    }
+  }
+
+  // Render Skills
+  function renderSkills() {
+    var container = $('#skills-container');
+    if (!container) return;
+
+    container.innerHTML = DATA.skillsCategories.map(function(cat) {
+      var pills = (cat.items || []).map(function(item) {
+        return '<li><span>' + escapeHtml(item) + '</span></li>';
+      }).join('');
+
+      return (
+        '<div class="skill-category-card">' +
+          '<div class="skill-cat-header">' +
+            '<div class="skill-icon-bubble">' + escapeHtml(cat.icon || '🚀') + '</div>' +
+            '<div class="skill-cat-title">' + escapeHtml(cat.title) + '</div>' +
+          '</div>' +
+          '<ul class="skills-pill-cloud">' + pills + '</ul>' +
+        '</div>'
+      );
+    }).join('');
+  }
+
+  // Render Certifications
+  function renderCertifications() {
+    var container = $('#certs-container');
+    if (!container) return;
+
+    container.innerHTML = DATA.certifications.map(function(c) {
+      return (
+        '<div class="cert-card">' +
+          '<div class="cert-top">' +
+            '<span class="cert-badge">' + escapeHtml(c.badge) + '</span>' +
+          '</div>' +
+          '<h3 class="cert-title">' + escapeHtml(c.title) + '</h3>' +
+          '<div class="cert-issuer">' + escapeHtml(c.issuer) + '</div>' +
+          '<p class="cert-desc">' + escapeHtml(c.desc) + '</p>' +
+        '</div>'
+      );
+    }).join('');
+  }
+
+  // Render Achievements
+  function renderAchievements() {
+    var container = $('#achieve-container');
+    if (!container) return;
+
+    container.innerHTML = DATA.achievements.map(function(a) {
+      return (
+        '<div class="achieve-card">' +
+          '<div class="achieve-icon-box">' +
+            '<span>' + escapeHtml(a.icon || '⭐') + '</span>' +
+          '</div>' +
+          '<div class="achieve-content" style="flex:1;">' +
+            '<h3>' + escapeHtml(a.title) + '</h3>' +
+            '<div class="achieve-org">' + escapeHtml(a.org) + '</div>' +
+            '<p class="achieve-desc">' + escapeHtml(a.desc) + '</p>' +
+          '</div>' +
+        '</div>'
+      );
+    }).join('');
+  }
+
+  // Render Experience Timeline
+  function renderJobs() {
+    var container = $('#jobs');
+    if (!container) return;
+
+    container.innerHTML = DATA.jobs.map(function(j) {
+      return (
+        '<div class="timeline-item">' +
+          '<div class="timeline-dot"></div>' +
+          '<div class="timeline-card">' +
+            '<div class="timeline-head">' +
+              '<div class="timeline-title">' + escapeHtml(j.t) + '</div>' +
+              '<span class="timeline-time">' + escapeHtml(j.w) + '</span>' +
+            '</div>' +
+            '<p class="timeline-body">' + escapeHtml(j.d) + '</p>' +
+          '</div>' +
+        '</div>'
+      );
+    }).join('');
+  }
+
+  // Open Case Study Modal
+  function openCaseStudy(idx) {
+    var p = DATA.projects[idx];
+    if (!p) return;
+
+    var modal = $('#case-modal');
+    var content = $('#modal-content');
+
+    var stackBadges = (Array.isArray(p.stack) ? p.stack : []).map(function(s) {
+      return '<span class="stack-pill">' + escapeHtml(s) + '</span>';
+    }).join(' ');
+
+    var linksHtml = '';
+    if (p.demo || p.gh) {
+      linksHtml = '<div style="display:flex; gap:0.75rem; margin-top:0.75rem; flex-wrap:wrap;">' +
+        (p.demo ? '<a class="btn sm primary" href="' + escapeHtml(p.demo) + '" target="_blank" rel="noopener">Open Live Demo</a>' : '') +
+        (p.gh ? '<a class="btn sm" href="' + escapeHtml(p.gh) + '" target="_blank" rel="noopener">View GitHub Source</a>' : '') +
+        '</div>';
+    }
+
+    content.innerHTML = (
+      '<h2>' + escapeHtml(p.t) + '</h2>' +
+      '<div class="dialog-meta">' +
+        '<span class="project-category">' + escapeHtml(p.tag) + '</span>' +
+        '<span>•</span>' +
+        '<span>' + escapeHtml(p.role) + '</span>' +
+      '</div>' +
+      (stackBadges ? '<div style="margin-bottom:1rem;">' + stackBadges + '</div>' : '') +
+      linksHtml +
+      '<div class="case-section">' +
+        '<h3>🎯 The Challenge &amp; Problem</h3>' +
+        '<p>' + escapeHtml(p.problem || 'No description provided.') + '</p>' +
+      '</div>' +
+      '<div class="case-section">' +
+        '<h3>⚙️ Implementation &amp; Architecture</h3>' +
+        '<p>' + escapeHtml(p.process || 'Details of implementation.') + '</p>' +
+      '</div>' +
+      '<div class="case-section">' +
+        '<h3>📈 Outcome &amp; Impact</h3>' +
+        '<p>' + escapeHtml(p.result || 'Results and business outcome.') + '</p>' +
+      '</div>'
+    );
+
+    if (typeof modal.showModal === 'function') {
+      modal.showModal();
+    }
+  }
+
+  function showCopyToast(msg) {
+    var toast = $('#copy-toast');
+    if (!toast) return;
+    toast.textContent = msg || '✓ Copied to clipboard!';
+    toast.classList.add('show');
+    setTimeout(function() {
+      toast.classList.remove('show');
+    }, 2400);
+  }
+
+  function copyToClipboard(text, successMsg) {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(function() {
+        showCopyToast(successMsg);
+      }).catch(function() {
+        fallbackCopy(text, successMsg);
+      });
+    } else {
+      fallbackCopy(text, successMsg);
+    }
+  }
+
+  function fallbackCopy(text, successMsg) {
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    try {
+      document.execCommand('copy');
+      showCopyToast(successMsg);
+    } catch(e) {}
+    document.body.removeChild(ta);
+  }
+
+  // Theme Management
+  var currentTheme = (function() {
+    try {
+      return localStorage.getItem(THEME_KEY) || 'dark';
+    } catch(e) {
+      return 'dark';
+    }
+  })();
+
+  function applyTheme() {
+    var root = document.documentElement;
+    if (currentTheme === 'light') {
+      root.setAttribute('data-theme', 'light');
+      $('#theme-text').textContent = 'Theme: Light';
+    } else {
+      root.setAttribute('data-theme', 'dark');
+      $('#theme-text').textContent = 'Theme: Dark';
+    }
+  }
+
+  $('#theme-btn').addEventListener('click', function() {
+    currentTheme = (currentTheme === 'dark') ? 'light' : 'dark';
+    try {
+      localStorage.setItem(THEME_KEY, currentTheme);
+    } catch(e) {}
+    applyTheme();
+  });
+
+  // Print Resume Button
+  $('#print-resume-btn').addEventListener('click', function() {
+    try { window.print(); } catch(e) {}
+  });
+
+  // Quick Copy Email Button
+  $('#quick-copy-email').addEventListener('click', function() {
+    copyToClipboard(DATA.email, '✓ Email copied to clipboard!');
+  });
+
+  // Project search input listener
+  var searchInput = $('#project-search-input');
+  if (searchInput) {
+    searchInput.addEventListener('input', function(e) {
+      searchQuery = e.target.value;
+      renderProjects();
+    });
+  }
+
+  // Update contact links dynamically
+  ['contact-name', 'contact-subject', 'contact-msg'].forEach(function(id) {
+    var el = $('#' + id);
+    if (el) el.addEventListener('input', updateContactLinks);
+  });
+
+  // Click delegation
+  document.addEventListener('click', function(e) {
+    var t = e.target.closest('button, a');
+    if (!t) return;
+    var d = t.dataset;
+
+    if (d.filterTag !== undefined) {
+      currentFilter = d.filterTag;
+      renderProjects();
+      return;
+    }
+
+    if (d.case !== undefined) {
+      openCaseStudy(parseInt(d.case, 10));
+      return;
+    }
+
+    if (d.close !== undefined) {
+      var dlg = t.closest('dialog');
+      if (dlg && typeof dlg.close === 'function') dlg.close();
+      return;
+    }
+
+    if (d.copy === 'email') {
+      copyToClipboard(DATA.email, '✓ Email address copied!');
+      return;
+    }
+  });
+
+  // Navigation scroll observer
+  if ('IntersectionObserver' in window) {
+    var navLinks = $$('nav .links a');
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          navLinks.forEach(function(link) {
+            link.setAttribute('aria-current', link.getAttribute('href') === '#' + entry.target.id);
+          });
+        }
+      });
+    }, { rootMargin: '-30% 0px -55% 0px' });
+
+    $$('section[id]').forEach(function(sec) {
+      observer.observe(sec);
+    });
+  }
+
+  // Render everything
+  var yearEl = $('#year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+  applyTheme();
+  updateContactLinks();
+  renderProjects();
+  renderSkills();
+  renderCertifications();
+  renderJobs();
+  renderAchievements();
+
+})();
+</script>
+
+</body>
+</html>
