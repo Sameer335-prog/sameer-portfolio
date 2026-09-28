@@ -2,6 +2,8 @@ Sameer Ahmad — Developer Portfolio
 ===================================
 Student at NFC Institute of Engineering & Technology (NFC-IET), Multan.
 Specializing in Mobile App Development, GoHighLevel (GHL) Automation, AI Tools, and Enterprise CRM Systems.
+Contact: shykhsameeer@gmail.com | Phone & WhatsApp: +92 310 4160211
+GitHub: https://github.com/Sameer335-prog
 
 ✨ Features & Projects
 ---------------------

@@ -1667,6 +1667,20 @@ dialog h2 {
 
         <div class="contact-channel">
           <div class="contact-channel-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.053 15.053 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.2z"/></svg>
+          </div>
+          <div class="contact-channel-details">
+            <div class="channel-label">Phone &amp; WhatsApp</div>
+            <div class="channel-value">+92 310 4160211</div>
+          </div>
+          <div style="display:flex; gap:0.4rem;">
+            <button class="copy-pill-btn" type="button" data-copy="phone">Copy</button>
+            <a class="copy-pill-btn" href="https://wa.me/923104160211" target="_blank" rel="noopener" style="color:var(--success); border-color:rgba(16,185,129,0.3);">WhatsApp</a>
+          </div>
+        </div>
+
+        <div class="contact-channel">
+          <div class="contact-channel-icon">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.45a1.62 1.62 0 1 0 0 3.24 1.62 1.62 0 0 0 0-3.24z"/></svg>
           </div>
           <div class="contact-channel-details">
@@ -1702,6 +1716,7 @@ dialog h2 {
 
     <div class="footer-links">
       <a class="btn sm" href="#contact">Contact Sameer</a>
+      <a class="btn sm" href="https://wa.me/923104160211" target="_blank" rel="noopener">WhatsApp</a>
       <a class="btn sm" href="https://github.com/Sameer335-prog" target="_blank" rel="noopener">GitHub</a>
       <a class="btn sm" href="https://linkedin.com/in/sameer-ahmad" target="_blank" rel="noopener">LinkedIn</a>
     </div>
@@ -1726,6 +1741,8 @@ dialog h2 {
   var DATA = {
     name: 'Sameer Ahmad',
     email: 'shykhsameeer@gmail.com',
+    phone: '+92 310 4160211',
+    whatsapp: 'https://wa.me/923104160211',
     li: 'https://linkedin.com/in/sameer-ahmad',
     gh: 'https://github.com/Sameer335-prog',
     projects: [
@@ -2246,6 +2263,11 @@ dialog h2 {
 
     if (d.copy === 'email') {
       copyToClipboard(DATA.email, '✓ Email address copied!');
+      return;
+    }
+
+    if (d.copy === 'phone') {
+      copyToClipboard(DATA.phone || '+92 310 4160211', '✓ Phone number copied!');
       return;
     }
   });
