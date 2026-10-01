@@ -14,84 +14,37 @@
 <style>
 /* CSS RESET & MODERN TOKENS */
 :root {
-  --bg: #0b0f19;
-  --bg-subtle: #111827;
-  --panel: #162032;
-  --panel-hover: #1c2940;
-  --panel-border: rgba(255, 255, 255, 0.08);
-  --panel-border-focus: rgba(99, 102, 241, 0.4);
-  --ink: #f3f4f6;
-  --ink-heading: #ffffff;
-  --muted: #94a3b8;
-  --line: rgba(255, 255, 255, 0.1);
-  --accent: #3b82f6;
-  --accent-gradient: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
-  --accent-glow: rgba(59, 130, 246, 0.25);
+  /* GITHUB DARK THEME TOKENS */
+  --bg: #0d1117;
+  --bg-subtle: #010409;
+  --panel: #161b22;
+  --panel-hover: #21262d;
+  --panel-border: #30363d;
+  --panel-border-focus: #58a6ff;
+  --ink: #c9d1d9;
+  --ink-heading: #e6edf3;
+  --muted: #8b949e;
+  --line: #21262d;
+  --accent: #58a6ff;
+  --accent-gradient: linear-gradient(135deg, #58a6ff 0%, #2f81f7 100%);
+  --accent-glow: rgba(88, 166, 255, 0.15);
   --accent-ink: #ffffff;
-  --tag-bg: rgba(59, 130, 246, 0.12);
-  --tag-ink: #93c5fd;
-  --tag-border: rgba(59, 130, 246, 0.25);
-  --success: #10b981;
-  --success-bg: rgba(16, 185, 129, 0.12);
-  --danger: #ef4444;
-  --font-head: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
-  --radius-sm: 0.5rem;
-  --radius-md: 0.85rem;
-  --radius-lg: 1.25rem;
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.25);
-  --shadow-md: 0 10px 25px -5px rgba(0, 0, 0, 0.35), 0 8px 10px -6px rgba(0, 0, 0, 0.3);
-  --shadow-lg: 0 20px 35px -10px rgba(0, 0, 0, 0.5);
+  --tag-bg: rgba(88, 166, 255, 0.1);
+  --tag-ink: #58a6ff;
+  --tag-border: rgba(88, 166, 255, 0.4);
+  --success: #238636;
+  --success-bg: rgba(35, 134, 54, 0.15);
+  --danger: #da3633;
+  --font-head: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  --font-mono: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
+  --radius-sm: 6px;
+  --radius-md: 6px;
+  --radius-lg: 6px;
+  --shadow-sm: 0 0 transparent;
+  --shadow-md: 0 3px 6px rgba(1, 4, 9, 0.8);
+  --shadow-lg: 0 8px 24px rgba(1, 4, 9, 0.8);
   box-sizing: border-box;
-}
-
-:root[data-theme="light"] {
-  --bg: #f8fafc;
-  --bg-subtle: #f1f5f9;
-  --panel: #ffffff;
-  --panel-hover: #f8fafc;
-  --panel-border: rgba(15, 23, 42, 0.08);
-  --panel-border-focus: rgba(37, 99, 235, 0.3);
-  --ink: #1e293b;
-  --ink-heading: #0f172a;
-  --muted: #64748b;
-  --line: rgba(15, 23, 42, 0.08);
-  --accent: #2563eb;
-  --accent-gradient: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
-  --accent-glow: rgba(37, 99, 235, 0.18);
-  --accent-ink: #ffffff;
-  --tag-bg: rgba(37, 99, 235, 0.08);
-  --tag-ink: #1d4ed8;
-  --tag-border: rgba(37, 99, 235, 0.2);
-  --shadow-sm: 0 2px 6px rgba(15, 23, 42, 0.06);
-  --shadow-md: 0 10px 25px -5px rgba(15, 23, 42, 0.07), 0 8px 10px -6px rgba(15, 23, 42, 0.05);
-  --shadow-lg: 0 20px 35px -10px rgba(15, 23, 42, 0.1);
-}
-
-@media (prefers-color-scheme: light) {
-  :root:not([data-theme="dark"]) {
-    --bg: #f8fafc;
-    --bg-subtle: #f1f5f9;
-    --panel: #ffffff;
-    --panel-hover: #f8fafc;
-    --panel-border: rgba(15, 23, 42, 0.08);
-    --panel-border-focus: rgba(37, 99, 235, 0.3);
-    --ink: #1e293b;
-    --ink-heading: #0f172a;
-    --muted: #64748b;
-    --line: rgba(15, 23, 42, 0.08);
-    --accent: #2563eb;
-    --accent-gradient: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
-    --accent-glow: rgba(37, 99, 235, 0.18);
-    --accent-ink: #ffffff;
-    --tag-bg: rgba(37, 99, 235, 0.08);
-    --tag-ink: #1d4ed8;
-    --tag-border: rgba(37, 99, 235, 0.2);
-    --shadow-sm: 0 2px 6px rgba(15, 23, 42, 0.06);
-    --shadow-md: 0 10px 25px -5px rgba(15, 23, 42, 0.07), 0 8px 10px -6px rgba(15, 23, 42, 0.05);
-    --shadow-lg: 0 20px 35px -10px rgba(15, 23, 42, 0.1);
-  }
 }
 
 *, *::before, *::after {
